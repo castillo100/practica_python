@@ -19,7 +19,7 @@ def es_primo(numero):
         bool: True si es primo, False si no
     """
     if(numero == 0): return False
-    if(numero == 1 or numero == 2): return True
+    if(numero == 2): return True
     if(numero > 0):
         interruptor = True
         propio = numero % numero == 0
@@ -47,34 +47,27 @@ def test():
     resultado = es_primo(numero)
     # Assert
     print(f"primer caso: {resultado == False}")
-    # Segundo caso: 1 == True
-    # Arrange
-    numero = 1
-    # Act
-    resultado = es_primo(numero)
-    # Assert
-    print(f"segundo caso: {resultado == True}")
-    # Tercer caso: 2 == True
+    # Segundo caso: 2 == True
     # Arrange
     numero = 2
     # Act
     resultado = es_primo(numero)
     # Assert
-    print(f"tercer caso: {resultado == True}")
-    # Cuarto caso: 3 == True
+    print(f"segundo caso: {resultado == True}")
+    # Tercer caso: 3 == True
     # Arrange
     numero = 3
     # Act
     resultado = es_primo(numero)
     # Assert
-    print(f"cuarto caso: {resultado == True}")
-    # Quintoo caso: 4 == False
+    print(f"tercer caso: {resultado == True}")
+    # Cuarto caso: 4 == False
     # Arrange
     numero = 4
     # Act
     resultado = es_primo(numero)
     # Assert
-    print(f"quinto caso: {resultado == False}")
+    print(f"cuarto caso: {resultado == False}")
     
 # Review
 # Evaluate
@@ -83,7 +76,7 @@ def test():
 test()
 
 def escribir_a_archivo(lista, nombre_archivo):
-    """crear un archivo txt con los datos y nombre facilitados por el usuario
+    """Crea un archivo txt con los datos y nombre facilitados por el usuario
 
     Args:
         lista (list): lista de enteros a ser guardada en el archivo
@@ -102,7 +95,7 @@ def main(n, nombre_archivo):
         nombre_archivo (str): nombre del archivo determinado por el usuario
     """
     numeros_primos = []
-    for i in range(1, n+1):
+    for i in range(2, n+1):
         if es_primo(i) == True:
             numeros_primos.append(i)
     escribir_a_archivo(numeros_primos, nombre_archivo)
