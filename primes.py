@@ -9,9 +9,6 @@
 # añadir a lista si es primo
 # guardar lista al finalizar
 # Implement
-
-# to check performance
-import time
 def es_primo(numero):
     """Evalúa si un número es primo o no
 
@@ -25,19 +22,15 @@ def es_primo(numero):
     if(numero == 2): return True
     if(numero > 0):
         interruptor = True
-        propio = numero % numero == 0
-        uno = numero % 1 == 0
-        resultado = propio and uno
+        
         while interruptor == True:
-            for i in range(numero - 1, 1, -1):
+            for i in range(2, numero - 1):
                 es_multiplo = numero % i == 0
-                if es_multiplo: 
+                if es_multiplo == True: 
                     interruptor = False
                     return False
-                else:
-                    resultado and es_multiplo
             interruptor = False
-            return resultado
+            return True
             
 # Test-driven development: red, green, refactor
 # Usar Arrange, Act, Assert (Preparar, Ejecutar, Comprobar)
@@ -79,7 +72,8 @@ def test():
     # Assert
     print(f"quinto caso: {resultado == False}")
     
-# Review that result fulfills expectations
+# Review
+# Evaluate
 
 
 test()
@@ -111,10 +105,3 @@ def main(n, nombre_archivo):
     print(len(numeros_primos))
 
 main(250, "primos")
-# Evaluate performance
-start_time = time.time()
-es_primo(100000)
-end_time = time.time()
-
-elapsed_time = end_time - start_time
-print(f"The function took {elapsed_time} seconds to run.")
