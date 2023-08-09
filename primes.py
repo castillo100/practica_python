@@ -9,6 +9,9 @@
 # añadir a lista si es primo
 # guardar lista al finalizar
 # Implement
+
+# to check performance
+import time
 def es_primo(numero):
     """Evalúa si un número es primo o no
 
@@ -76,8 +79,7 @@ def test():
     # Assert
     print(f"quinto caso: {resultado == False}")
     
-# Review
-# Evaluate
+# Review that result fulfills expectations
 
 
 test()
@@ -109,3 +111,10 @@ def main(n, nombre_archivo):
     print(len(numeros_primos))
 
 main(250, "primos")
+# Evaluate performance
+start_time = time.time()
+es_primo(100000)
+end_time = time.time()
+
+elapsed_time = end_time - start_time
+print(f"The function took {elapsed_time} seconds to run.")
