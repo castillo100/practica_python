@@ -2,7 +2,7 @@
 # Undertand
 # Generar lista de números primos entre 1 y 250, luego grabar en archivo.txt
 # número primo: solamente divisible de forma exacta entre sí mismo y 1
-# números primos: 1, 2, 3, 5, 7, 11, 13, 17, 19 
+# números primos: 2, 3, 5, 7, 11, 13, 17, 19 
 # Match
 # Plan
 # crear una función que evalúe si el número es primo o no
@@ -104,4 +104,4 @@ def main(n, nombre_archivo):
     escribir_a_archivo(numeros_primos, nombre_archivo)
     print(len(numeros_primos))
 
-main(250, "primos")
+main(20, "numeros_primos")
