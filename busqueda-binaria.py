@@ -13,7 +13,6 @@ def busqueda_binaria(lista, objetivo):
         
     for _ in range(len(lista)):
         if objetivo not in lista_ordenada:
-            
             resultado = False
             return resultado
         biseccion = len(lista_ordenada) // 2
