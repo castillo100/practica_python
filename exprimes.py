@@ -1,14 +1,4 @@
-# Framework UMPIRE
-# Undertand
-# Generar lista de números primos entre 1 y 250, luego grabar en archivo.txt
-# número primo: solamente divisible de forma exacta entre sí mismo y 1
-# números primos: 2, 3, 5, 7, 11, 13, 17, 19 
-# Match
-# Plan
-# crear una función que evalúe si el número es primo o no
-# añadir a lista si es primo
-# guardar lista al finalizar
-# Implement
+
 def es_primo(numero):
     """Evalúa si un número es primo o no
 
@@ -20,6 +10,7 @@ def es_primo(numero):
     """
     if(numero == 0 or numero == 1): return False
     if(numero == 2): return True
+    if(not isinstance(numero, int)): return False
     if(numero > 0):
         interruptor = True
         
@@ -31,6 +22,8 @@ def es_primo(numero):
                     return False
             interruptor = False
             return True
+    else:
+        return False
             
 # Test-driven development: red, green, refactor
 # Usar Arrange, Act, Assert (Preparar, Ejecutar, Comprobar)
@@ -71,12 +64,26 @@ def test():
     resultado = es_primo(numero)
     # Assert
     print(f"quinto caso: {resultado == False}")
+    # Sexto caso: 0.6 == False
+    # Arrange
+    numero = 0.6
+    # Act
+    resultado = es_primo(numero)
+    # Assert
+    print(f"sexto caso: {resultado == False}")
+    # Séptimo caso: -3 == False
+    # Arrange
+    numero = -6
+    # Act
+    resultado = es_primo(numero)
+    # Assert
+    print(f"séptimo caso: {resultado == False}")
     
 # Review
 # Evaluate
 
 
-test()
+
 
 def escribir_a_archivo(lista, nombre_archivo):
     """Crea un archivo txt con los datos y nombre facilitados por el usuario
@@ -104,4 +111,5 @@ def main(n, nombre_archivo):
     escribir_a_archivo(numeros_primos, nombre_archivo)
     print(len(numeros_primos))
 
+test()
 main(250, "numeros_primos")
